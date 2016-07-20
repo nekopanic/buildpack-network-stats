@@ -47,7 +47,7 @@ func main() {
 				}
 			}
 
-			fmt.Printf("source=%s sample#iface=%s sample#bytes_recv=%d sample#bytes_sent=%d sample#packets_recv=%d sample#packets_sent=%d sample#recv_error=%d sample#sent_error=%d sample#recv_drop=%d sample#sent_drop=%d\n",
+			fmt.Printf("ps=%s sample#iface=%s sample#bytes_recv=%d sample#bytes_sent=%d sample#packets_recv=%d sample#packets_sent=%d sample#recv_error=%d sample#sent_error=%d sample#recv_drop=%d sample#sent_drop=%d\n",
 				source,
 				s.Iface,
 				s.RxBytes - p.RxBytes,
