@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Installing Dyno Network Stats package"
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+mkdir -p $BUILD_DIR/bin
+cp dyno-network-stats $BUILD_DIR/bin/
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/dyno-network-stats.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+
+echo '/app/bin/dyno-network-stats &' >> $PROFILE_PATH
+
+echo 'Install completed' | indent
