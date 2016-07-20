@@ -1,3 +1,4 @@
 #!/bin/sh
 
+echo "Network stats buildpack"
 exit 0
