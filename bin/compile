@@ -17,6 +17,6 @@ cp dyno-network-stats $BUILD_DIR/bin/
 PROFILE_PATH="$BUILD_DIR/.profile.d/dyno-network-stats.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 
-echo '/app/bin/dyno-network-stats &' >> $PROFILE_PATH
+echo 'if [[ ! $DYNO =~ ^run\..*$ ]]; then /app/bin/dyno-network-stats & fi' >> $PROFILE_PATH
 
 echo 'Install completed' | indent
